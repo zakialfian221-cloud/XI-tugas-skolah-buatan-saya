@@ -64,15 +64,23 @@
     <audio id="hacker-sound" src="https://www.soundjay.com/buttons/sounds/Splash.mp3"></audio>
 
     <script>
-        function startSystem() {
-            // Putar Suara
-            var <audio id="hacker-sound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
-            
-            // Sembunyikan Overlay & Tampilkan Dashboard
-            document.getElementById("overlay").style.display = "none";
-            document.getElementById("main-content").style.display = "block";
-            document.body.style.overflow = "auto";
-        }
+    function startSystem() {
+        // 1. Panggil Audio
+        var audio = document.getElementById("hacker-sound");
+        
+        // 2. Paksa Audio Bunyi (Volume Full)
+        audio.volume = 1.0;
+        audio.play().catch(function(error) {
+            console.log("Browser blokir suara, tapi dashboard tetep buka.");
+        });
+        
+        // 3. Langsung Tampilkan Konten
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        
+        // 4. Biar Layar Bisa Di-scroll
+        document.body.style.overflow = "auto";
+    }
     </script>
 </body>
 </html>
