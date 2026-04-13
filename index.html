@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XI CLASS - COMMISSIONER DASHBOARD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&d>
+
+        :root { --gold: #ffcc00; --dark: #080808; --glass: rgba(255, 255, 255, 0.05); }
+        body { background: var(--dark); color: #fff; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 15px; ba>
+
+        /* Jam & Header */
+        .header { text-align: center; border: 1px solid var(--gold); border-radius: 20px; padding: 20px; background: v>
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--gold); font-size: 22px; margin: 0; text-shadow: 0 0 10p>
+        #clock { font-size: 18px; color: #fff; margin-top: 10px; font-weight: bold; }
+
+        /* Pengumuman Jalan */
+        .announcement { background: #ff0000; color: white; padding: 5px; border-radius: 5px; margin-bottom: 20px; font>
+
+        /* Grid Jadwal */
+        .schedule-grid { display: grid; gap: 15px; }
+        .day-card { background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding>
+        .day-title { color: var(--gold); font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 1px s>
+        .subject { display: flex; justify-content: space-between; font-size: 15px; margin: 5px 0; color: #ccc; }
+
+        .btn-wa { display: block; text-align: center; background: #25d366; color: white; padding: 10px; border-radius:>
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>XI CLASS DASHBOARD</h1>
+    <div id="clock">00:00:00</div>
+    <p style="font-size: 12px; color: #888;">CONTROLLED BY COMMISSIONER ZAKI</p>
+</div>
+
+<div class="announcement">
+    <marquee>⚠️ INFO PENTING: Kumpulkan Tugas PKN sebelum jam 12:00! | Piket Hari ini harap bersihkan papan tulis! ⚠️</m>
+</div>
+
+<div class="schedule-grid">
+    <div class="day-card">
+        <div class="day-title">SENIN</mtk/pjok/ppkn/sejarah>
+        <div class="subject"><span>07:00 - Upacara</span><span>🇮🇩</span></div>
+        <div class="subject"><span>08:00 - Matematika</span><span>🧮</span></div>
+        <div class="subject"><span>10:00 - B. Indonesia</span><span>📖</span></div>
+    </div>
+
+    <div class="day-card">
+        <div class="day-title">SELASA</b.inggris/b.indo/pabb>
+        <div class="subject"><span>07:00 - Fisika</span><span>⚛️</span></div>
+        <div class="subject"><span>09:00 - Olahraga</span><span>⚽</span></div>
+    </div>
+
+    </div>
+
+<a href="https://wa.me/6283147684295?text=Lapor+Pak+Komisaris!" class="btn-wa">HUBUNGI KOMISARIS</a>
+
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById('clock').innerText = time;
+    }
+    setInterval(updateClock, 1000);
+</script>
