@@ -3,82 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XI CLASS - CONTROL CENTER</title>
+    <title>R3X V6 - COMMAND CENTER XI</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Share+Tech+Mono&display=swap');
 
-        :root { --gold: #ffcc00; --dark: #0a0a0a; --gray: #1a1a1a; --red: #ff4444; }
-        body { background: var(--dark); color: #eee; font-family: 'Roboto', sans-serif; margin: 0; padding: 20px; }
+        :root { --cyan: #00f2ff; --gold: #ffcc00; --bg: #050505; --panel: #0d0d0d; }
         
-        .container { max-width: 600px; margin: auto; }
+        body { background: var(--bg); color: #fff; font-family: 'Share Tech Mono', monospace; margin: 0; padding: 15px; border: 2px solid #111; min-height: 95vh; }
+        .container { max-width: 500px; margin: auto; }
+
+        /* VIP HEADER */
+        .vip-header { border: 1px solid var(--cyan); border-radius: 0; padding: 25px; background: linear-gradient(135deg, #0a0a0a, #111); position: relative; margin-bottom: 25px; }
+        .vip-header::before { content: "CLASSIFIED"; position: absolute; top: 5px; right: 10px; font-size: 8px; color: var(--cyan); letter-spacing: 2px; }
+        h1 { font-family: 'Syncopate', sans-serif; font-size: 18px; color: var(--cyan); margin: 0; letter-spacing: 3px; }
+        .user-id { font-size: 10px; color: var(--gold); margin-top: 10px; border-top: 1px solid #222; padding-top: 10px; }
+
+        /* GRID SYSTEM */
+        .grid-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .panel-box { background: var(--panel); border: 1px solid #222; padding: 15px; position: relative; }
+        .panel-box::after { content: ""; position: absolute; top: 0; left: 0; width: 5px; height: 5px; border-top: 1px solid var(--cyan); border-left: 1px solid var(--cyan); }
+        .panel-title { font-size: 11px; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 5px; }
         
-        /* Header Statis Mewah */
-        .header { border: 2px solid var(--gold); border-radius: 15px; padding: 20px; text-align: center; background: var(--gray); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(255, 204, 0, 0.1); }
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--gold); margin: 0; font-size: 24px; }
-        .sub-header { color: #888; font-size: 11px; letter-spacing: 2px; margin-top: 5px; font-weight: bold; }
+        .data-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px; color: #aaa; }
+        .data-val { color: #fff; font-weight: bold; }
 
-        /* Section Title */
-        .section-title { border-left: 4px solid var(--gold); padding-left: 10px; margin: 25px 0 12px 0; font-weight: bold; color: var(--gold); text-transform: uppercase; font-size: 14px; }
+        /* FULL WIDTH PANEL */
+        .full-panel { background: var(--panel); border: 1px solid #222; padding: 15px; margin-bottom: 20px; border-left: 2px solid var(--cyan); }
 
-        /* Box Konten */
-        .box { background: var(--gray); border-radius: 12px; padding: 15px; border: 1px solid #333; }
-        .item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222; font-size: 14px; }
-        .item:last-child { border: none; }
-        
-        /* Status Badges */
-        .badge { padding: 3px 10px; border-radius: 5px; font-size: 10px; font-weight: bold; text-transform: uppercase; }
-        .urgent { background: var(--red); color: white; }
-        .safe { background: #00c851; color: white; }
+        /* VIP BUTTONS */
+        .action-area { margin-top: 30px; }
+        .btn-vip { display: block; width: 100%; padding: 18px; background: transparent; color: var(--cyan); border: 1px solid var(--cyan); text-decoration: none; text-align: center; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; box-sizing: border-box; }
+        .btn-vip:active { background: var(--cyan); color: #000; }
 
-        /* Action Buttons */
-        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
-        .btn { display: block; text-align: center; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; }
-        .btn-gold { background: var(--gold); color: #000; }
-        .btn-sos { background: transparent; color: var(--red); border: 1px solid var(--red); }
-        .btn:active { transform: scale(0.95); }
-
-        .footer { text-align: center; font-size: 10px; color: #555; margin-top: 50px; padding-bottom: 20px; letter-spacing: 1px; }
+        .footer { text-align: center; font-size: 9px; color: #333; margin-top: 50px; text-transform: uppercase; }
+        .secure-tag { color: var(--gold); font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>XI CLASS CENTER</h1>
-        <div class="sub-header">CHIEF COMMISSIONER: ZAKI ALFIAN</div>
+    <div class="vip-header">
+        <h1>COMMAND CENTER XI</h1>
+        <div class="user-id">ACCESS GRANTED: COMMISSIONER BG KIY</div>
     </div>
 
-    <div class="section-title">📅 JADWAL PELAJARAN (HARI INI)</div>
-    <div class="box">
-        <div class="item"><span>07:15 - 08:45</span> <span>Matematika (Bu Ratna)</span></div>
-        <div class="item"><span>09:00 - 10:30</span> <span>B. Inggris (Ms. Ana)</span></div>
-        <div class="item"><span>11:00 - 12:30</span> <span>Fisika (Pak Budi)</span></div>
+    <div class="grid-panel">
+        <div class="panel-box">
+            <div class="panel-title">Current Status</div>
+            <div class="data-row">Day: <span class="data-val">Monday</span></div>
+            <div class="data-row">Period: <span class="data-val">Active</span></div>
+        </div>
+        <div class="panel-box">
+            <div class="panel-title">Class Finance</div>
+            <div class="data-row">Balance: <span class="data-val">Rp 520k</span></div>
+            <div class="data-row">Verify: <span class="secure-tag">SECURE</span></div>
+        </div>
     </div>
 
-    <div class="section-title">📝 DEADLINE TUGAS & PROJECT</div>
-    <div class="box">
-        <div class="item"><span>Praktikum Kimia</span> <span class="badge urgent">BESOK!</span></div>
-        <div class="item"><span>Makalah Sejarah</span> <span class="badge safe">KAMIS</span></div>
-        <div class="item"><span>Tugas Desain</span> <span class="badge safe">SABTU</span></div>
+    <div class="full-panel">
+        <div class="panel-title">Daily Operations (Schedule)</div>
+        <div class="data-row">07:15 - 08:45 <span class="data-val">MATEMATIKA</span></div>
+        <div class="data-row">09:00 - 10:30 <span class="data-val">B. INGGRIS</span></div>
+        <div class="data-row">11:00 - 12:30 <span class="data-val">B. ARAB</span></div>
     </div>
 
-    <div class="section-title">👥 INFO KELAS & KEUANGAN</div>
-    <div class="box">
-        <div class="item"><span>Uang Kas:</span> <span style="color: #00c851; font-weight:bold;">Rp 520.000</span></div>
-        <div class="item"><span>Piket Hari Ini:</span> <span style="color: var(--gold);">Zaki, Maya, Eko, Rina</span></div>
-        <div class="item"><span>Info:</span> <span style="color: #aaa;">Bawa Baju Olahraga Besok!</span></div>
+    <div class="full-panel">
+        <div class="panel-title">Mission Targets (Deadlines)</div>
+        <div class="data-row">Tugas B. Arab <span style="color:var(--cyan);">MODERATE</span></div>
+        <div class="data-row">History Paper <span class="data-val">DUE THURSDAY</span></div>
     </div>
 
-    <div class="btn-grid">
-        <a href="https://wa.me/6283147684295?text=Lapor+Komisaris+Zaki,+saya+mau+bertanya+tentang..." class="btn btn-gold">LAPOR KOMISARIS</a>
-        <a href="tel:08123456789" class="btn btn-sos">SOS WALI KELAS</a>
+    <div class="grid-panel">
+        <div class="panel-box">
+            <div class="panel-title">Duty Personnel</div>
+            <div class="data-row">1. BG KIY</div>
+            <div class="data-row">2. Maya S.</div>
+        </div>
+        <div class="panel-box">
+            <div class="panel-title">Absence</div>
+            <div class="data-row">Sakit: <span class="data-val">2</span></div>
+            <div class="data-row">Izin: <span class="data-val">0</span></div>
+        </div>
+    </div>
+
+    <div class="action-area">
+        <a href="https://wa.me/6283147684295?text=COMMISSIONER+BG+KIY+IDENTIFIED.+SEND+MESSAGE..." class="btn-vip">ESTABLISH CONNECTION (WA)</a>
     </div>
 
     <div class="footer">
-        XI MANAGEMENT SYSTEM v5.0 BY DARK SYSTEM<br>
-        DEVELOPED BY ZAKI ALFIAN &copy; 2026
+        SYSTEM ENCRYPTION: R3X-BLACK-OPS-V6<br>
+        DESIGNED BY <span class="secure-tag">BG KIY</span> &copy; 2026
     </div>
 </div>
 
 </body>
-</html>
+    </html>
