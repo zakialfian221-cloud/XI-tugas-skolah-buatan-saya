@@ -3,98 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R3X V6 - COMMAND CENTER XI</title>
+    <title>BG KIY | PUSAT KENDALI XI</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:wght@400;700&display=swap');
 
-        :root { --cyan: #00f2ff; --gold: #ffcc00; --bg: #050505; --panel: #0d0d0d; }
+        :root { --neon: #00f2ff; --gold: #ffcc00; --bg: #020202; }
         
-        body { background: var(--bg); color: #fff; font-family: 'Share Tech Mono', monospace; margin: 0; padding: 15px; border: 2px solid #111; min-height: 95vh; }
-        .container { max-width: 500px; margin: auto; }
+        body { 
+            background: var(--bg); color: #fff; font-family: 'Space Mono', monospace; margin: 0; padding: 10px;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
 
-        /* VIP HEADER */
-        .vip-header { border: 1px solid var(--cyan); border-radius: 0; padding: 25px; background: linear-gradient(135deg, #0a0a0a, #111); position: relative; margin-bottom: 25px; }
-        .vip-header::before { content: "CLASSIFIED"; position: absolute; top: 5px; right: 10px; font-size: 8px; color: var(--cyan); letter-spacing: 2px; }
-        h1 { font-family: 'Syncopate', sans-serif; font-size: 18px; color: var(--cyan); margin: 0; letter-spacing: 3px; }
-        .user-id { font-size: 10px; color: var(--gold); margin-top: 10px; border-top: 1px solid #222; padding-top: 10px; }
+        .container { max-width: 480px; margin: auto; border: 1px solid #111; padding: 10px; }
 
-        /* GRID SYSTEM */
-        .grid-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
-        .panel-box { background: var(--panel); border: 1px solid #222; padding: 15px; position: relative; }
-        .panel-box::after { content: ""; position: absolute; top: 0; left: 0; width: 5px; height: 5px; border-top: 1px solid var(--cyan); border-left: 1px solid var(--cyan); }
-        .panel-title { font-size: 11px; color: var(--gold); margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid #222; padding-bottom: 5px; }
+        /* HEADER TERMEWAH */
+        .vip-top { 
+            border: 2px solid var(--neon); padding: 20px; position: relative; 
+            background: rgba(0,0,0,0.8); box-shadow: inset 0 0 15px rgba(0, 242, 255, 0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+        }
+        .vip-top h1 { font-family: 'Audiowide', cursive; font-size: 22px; color: var(--neon); margin: 0; letter-spacing: 2px; }
+        .vip-top p { font-size: 10px; color: var(--gold); margin: 5px 0 0 0; font-weight: bold; text-transform: uppercase; }
+
+        /* DATA MONITOR */
+        .monitor-panel { margin-top: 20px; border: 1px solid #222; background: #080808; padding: 15px; }
+        .tag { background: var(--neon); color: #000; padding: 2px 10px; font-size: 10px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
         
-        .data-row { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 8px; color: #aaa; }
-        .data-val { color: #fff; font-weight: bold; }
+        .line { border-bottom: 1px solid #1a1a1a; padding: 10px 0; display: flex; justify-content: space-between; font-size: 13px; }
+        .label { color: #666; }
+        .val { color: #fff; font-weight: bold; text-shadow: 0 0 5px var(--neon); }
 
-        /* FULL WIDTH PANEL */
-        .full-panel { background: var(--panel); border: 1px solid #222; padding: 15px; margin-bottom: 20px; border-left: 2px solid var(--cyan); }
+        /* TOMBOL HUBUNGI */
+        .btn-connect { 
+            display: block; width: 100%; margin-top: 25px; padding: 20px; 
+            background: transparent; border: 1px solid var(--gold); 
+            color: var(--gold); text-decoration: none; text-align: center;
+            font-weight: bold; letter-spacing: 3px; font-size: 14px;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .btn-connect:active { background: var(--gold); color: #000; }
 
-        /* VIP BUTTONS */
-        .action-area { margin-top: 30px; }
-        .btn-vip { display: block; width: 100%; padding: 18px; background: transparent; color: var(--cyan); border: 1px solid var(--cyan); text-decoration: none; text-align: center; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; box-sizing: border-box; }
-        .btn-vip:active { background: var(--cyan); color: #000; }
-
-        .footer { text-align: center; font-size: 9px; color: #333; margin-top: 50px; text-transform: uppercase; }
-        .secure-tag { color: var(--gold); font-weight: bold; }
+        .footer { text-align: right; font-size: 9px; color: #444; margin-top: 30px; line-height: 1.5; }
+        .glow-text { color: var(--neon); text-shadow: 0 0 10px var(--neon); }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="vip-header">
-        <h1>COMMAND CENTER XI</h1>
-        <div class="user-id">ACCESS GRANTED: COMMISSIONER BG KIY</div>
+    <div class="vip-top">
+        <h1>PUSAT KENDALI</h1>
+        <p>IDENTITAS PENGGUNA: <span class="glow-text">BG KIY</span> [KOMISARIS]</p>
     </div>
 
-    <div class="grid-panel">
-        <div class="panel-box">
-            <div class="panel-title">Current Status</div>
-            <div class="data-row">Day: <span class="data-val">Monday</span></div>
-            <div class="data-row">Period: <span class="data-val">Active</span></div>
-        </div>
-        <div class="panel-box">
-            <div class="panel-title">Class Finance</div>
-            <div class="data-row">Balance: <span class="data-val">Rp 520k</span></div>
-            <div class="data-row">Verify: <span class="secure-tag">SECURE</span></div>
-        </div>
+    <div class="monitor-panel">
+        <span class="tag">OPERASI HARIAN KELAS XI</span>
+        <div class="line"><span class="label">07:15 - 08:45</span> <span class="val">MATEMATIKA</span></div>
+        <div class="line"><span class="label">09:00 - 10:30</span> <span class="val">B. INGGRIS</span></div>
+        <div class="line"><span class="label">11:00 - 12:30</span> <span class="val" style="color:var(--gold)">B. ARAB</span></div>
     </div>
 
-    <div class="full-panel">
-        <div class="panel-title">Daily Operations (Schedule)</div>
-        <div class="data-row">07:15 - 08:45 <span class="data-val">MATEMATIKA</span></div>
-        <div class="data-row">09:00 - 10:30 <span class="data-val">B. INGGRIS</span></div>
-        <div class="data-row">11:00 - 12:30 <span class="data-val">B. ARAB</span></div>
+    <div class="monitor-panel">
+        <span class="tag">ASET & PERSONEL</span>
+        <div class="line"><span class="label">SALDO KAS:</span> <span class="val">RP 520.000</span></div>
+        <div class="line"><span class="label">PETUGAS PIKET:</span> <span class="val">BG KIY, MAYA, EKO</span></div>
+        <div class="line"><span class="label">STATUS SISTEM:</span> <span class="val" style="color: #00ff00;">STABIL</span></div>
     </div>
 
-    <div class="full-panel">
-        <div class="panel-title">Mission Targets (Deadlines)</div>
-        <div class="data-row">Tugas B. Arab <span style="color:var(--cyan);">MODERATE</span></div>
-        <div class="data-row">History Paper <span class="data-val">DUE THURSDAY</span></div>
-    </div>
-
-    <div class="grid-panel">
-        <div class="panel-box">
-            <div class="panel-title">Duty Personnel</div>
-            <div class="data-row">1. BG KIY</div>
-            <div class="data-row">2. Maya S.</div>
-        </div>
-        <div class="panel-box">
-            <div class="panel-title">Absence</div>
-            <div class="data-row">Sakit: <span class="data-val">2</span></div>
-            <div class="data-row">Izin: <span class="data-val">0</span></div>
-        </div>
-    </div>
-
-    <div class="action-area">
-        <a href="https://wa.me/6283147684295?text=COMMISSIONER+BG+KIY+IDENTIFIED.+SEND+MESSAGE..." class="btn-vip">ESTABLISH CONNECTION (WA)</a>
-    </div>
+    <a href="https://wa.me/6283147684295?text=Lapor+Komisaris+BG+KIY" class="btn-connect">HUBUNGI BG KIY</a>
 
     <div class="footer">
-        SYSTEM ENCRYPTION: R3X-BLACK-OPS-V6<br>
-        DESIGNED BY <span class="secure-tag">BG KIY</span> &copy; 2026
+        [ VERSI SISTEM 7.7.7 ]<br>
+        DIPERSEMBAHKAN OLEH <span style="color:#888;">BG KIY</span>
     </div>
 </div>
 
 </body>
-    </html>
+</html>
