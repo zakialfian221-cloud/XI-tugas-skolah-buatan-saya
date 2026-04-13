@@ -3,65 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XI CLASS - COMMISSIONER DASHBOARD</title>
+    <title>XI CLASS - CONTROL CENTER</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&d>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap');
 
-        :root { --gold: #ffcc00; --dark: #080808; --glass: rgba(255, 255, 255, 0.05); }
-        body { background: var(--dark); color: #fff; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 15px; ba>
+        :root { --gold: #ffcc00; --dark: #0a0a0a; --gray: #1a1a1a; --red: #ff4444; }
+        body { background: var(--dark); color: #eee; font-family: 'Roboto', sans-serif; margin: 0; padding: 20px; }
+        
+        .container { max-width: 600px; margin: auto; }
+        
+        /* Header Statis Mewah */
+        .header { border: 2px solid var(--gold); border-radius: 15px; padding: 20px; text-align: center; background: var(--gray); margin-bottom: 20px; box-shadow: 0 5px 15px rgba(255, 204, 0, 0.1); }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--gold); margin: 0; font-size: 24px; }
+        .sub-header { color: #888; font-size: 11px; letter-spacing: 2px; margin-top: 5px; font-weight: bold; }
 
-        /* Jam & Header */
-        .header { text-align: center; border: 1px solid var(--gold); border-radius: 20px; padding: 20px; background: v>
-        h1 { font-family: 'Orbitron', sans-serif; color: var(--gold); font-size: 22px; margin: 0; text-shadow: 0 0 10p>
-        #clock { font-size: 18px; color: #fff; margin-top: 10px; font-weight: bold; }
+        /* Section Title */
+        .section-title { border-left: 4px solid var(--gold); padding-left: 10px; margin: 25px 0 12px 0; font-weight: bold; color: var(--gold); text-transform: uppercase; font-size: 14px; }
 
-        /* Pengumuman Jalan */
-        .announcement { background: #ff0000; color: white; padding: 5px; border-radius: 5px; margin-bottom: 20px; font>
+        /* Box Konten */
+        .box { background: var(--gray); border-radius: 12px; padding: 15px; border: 1px solid #333; }
+        .item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #222; font-size: 14px; }
+        .item:last-child { border: none; }
+        
+        /* Status Badges */
+        .badge { padding: 3px 10px; border-radius: 5px; font-size: 10px; font-weight: bold; text-transform: uppercase; }
+        .urgent { background: var(--red); color: white; }
+        .safe { background: #00c851; color: white; }
 
-        /* Grid Jadwal */
-        .schedule-grid { display: grid; gap: 15px; }
-        .day-card { background: var(--glass); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding>
-        .day-title { color: var(--gold); font-weight: bold; font-size: 18px; margin-bottom: 10px; border-bottom: 1px s>
-        .subject { display: flex; justify-content: space-between; font-size: 15px; margin: 5px 0; color: #ccc; }
+        /* Action Buttons */
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
+        .btn { display: block; text-align: center; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-sos { background: transparent; color: var(--red); border: 1px solid var(--red); }
+        .btn:active { transform: scale(0.95); }
 
-        .btn-wa { display: block; text-align: center; background: #25d366; color: white; padding: 10px; border-radius:>
+        .footer { text-align: center; font-size: 10px; color: #555; margin-top: 50px; padding-bottom: 20px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <h1>XI CLASS DASHBOARD</h1>
-    <div id="clock">00:00:00</div>
-    <p style="font-size: 12px; color: #888;">CONTROLLED BY COMMISSIONER ZAKI</p>
+<div class="container">
+    <div class="header">
+        <h1>XI CLASS CENTER</h1>
+        <div class="sub-header">CHIEF COMMISSIONER: ZAKI ALFIAN</div>
+    </div>
+
+    <div class="section-title">📅 JADWAL PELAJARAN (HARI INI)</div>
+    <div class="box">
+        <div class="item"><span>07:15 - 08:45</span> <span>Matematika (Bu Ratna)</span></div>
+        <div class="item"><span>09:00 - 10:30</span> <span>B. Inggris (Ms. Ana)</span></div>
+        <div class="item"><span>11:00 - 12:30</span> <span>Fisika (Pak Budi)</span></div>
+    </div>
+
+    <div class="section-title">📝 DEADLINE TUGAS & PROJECT</div>
+    <div class="box">
+        <div class="item"><span>Praktikum Kimia</span> <span class="badge urgent">BESOK!</span></div>
+        <div class="item"><span>Makalah Sejarah</span> <span class="badge safe">KAMIS</span></div>
+        <div class="item"><span>Tugas Desain</span> <span class="badge safe">SABTU</span></div>
+    </div>
+
+    <div class="section-title">👥 INFO KELAS & KEUANGAN</div>
+    <div class="box">
+        <div class="item"><span>Uang Kas:</span> <span style="color: #00c851; font-weight:bold;">Rp 520.000</span></div>
+        <div class="item"><span>Piket Hari Ini:</span> <span style="color: var(--gold);">Zaki, Maya, Eko, Rina</span></div>
+        <div class="item"><span>Info:</span> <span style="color: #aaa;">Bawa Baju Olahraga Besok!</span></div>
+    </div>
+
+    <div class="btn-grid">
+        <a href="https://wa.me/6283147684295?text=Lapor+Komisaris+Zaki,+saya+mau+bertanya+tentang..." class="btn btn-gold">LAPOR KOMISARIS</a>
+        <a href="tel:08123456789" class="btn btn-sos">SOS WALI KELAS</a>
+    </div>
+
+    <div class="footer">
+        XI MANAGEMENT SYSTEM v5.0 BY DARK SYSTEM<br>
+        DEVELOPED BY ZAKI ALFIAN &copy; 2026
+    </div>
 </div>
 
-<div class="announcement">
-    <marquee>⚠️ INFO PENTING: Kumpulkan Tugas PKN sebelum jam 12:00! | Piket Hari ini harap bersihkan papan tulis! ⚠️</m>
-</div>
-
-<div class="schedule-grid">
-    <div class="day-card">
-        <div class="day-title">SENIN</mtk/pjok/ppkn/sejarah>
-        <div class="subject"><span>07:00 - Upacara</span><span>🇮🇩</span></div>
-        <div class="subject"><span>08:00 - Matematika</span><span>🧮</span></div>
-        <div class="subject"><span>10:00 - B. Indonesia</span><span>📖</span></div>
-    </div>
-
-    <div class="day-card">
-        <div class="day-title">SELASA</b.inggris/b.indo/pabb>
-        <div class="subject"><span>07:00 - Fisika</span><span>⚛️</span></div>
-        <div class="subject"><span>09:00 - Olahraga</span><span>⚽</span></div>
-    </div>
-
-    </div>
-
-<a href="https://wa.me/6283147684295?text=Lapor+Pak+Komisaris!" class="btn-wa">HUBUNGI KOMISARIS</a>
-
-<script>
-    function updateClock() {
-        const now = new Date();
-        const time = now.toLocaleTimeString();
-        document.getElementById('clock').innerText = time;
-    }
-    setInterval(updateClock, 1000);
-</script>
+</body>
+</html>
